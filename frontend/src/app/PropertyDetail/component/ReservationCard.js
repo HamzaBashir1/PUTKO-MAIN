@@ -42,7 +42,7 @@ const ReservationCard = () => {
     }
   };
   return (
-    <div className='flex flex-col bg-[#f8f8f8]'>
+    <div className=' bg-[#f8f8f8]'>
         <div className='flex flex-col lg:flex-row p-4 lg:space-x-8'>
             <div className='flex-1'>
             <Overview />
@@ -134,9 +134,7 @@ const ReservationCard = () => {
             </div>
         </div>
 
-        <div className='flex-1'>
-
-        </div>
+        
     </div>
   )
 }

@@ -1,5 +1,4 @@
 import User from "../models/UserSchema.js";
-// import host from "../models/hostSchema.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 
@@ -10,47 +9,28 @@ const generateToken = (user) => {
 };
 
 export const register = async (req, res) => {
-  const { email, password, name, role, phosto, gender } = req.body;
+  const { email, password, name, role, photo, gender } = req.body;
 
   try {
-    let user = null;
-
-    if (role === "guest") {
-      user = await User.findOne({ email });
-    } else if (role === "host") {
-      user = await host.findOne({ email });
-    }
-
-    //check if user exist
+    // Check if the user already exists
+    let user = await User.findOne({ email });
     if (user) {
-      return res.status(400).json({ message: "User already exist" });
+      return res.status(400).json({ message: "User already exists" });
     }
 
-    //hash password
-    const Salt = await bcrypt.genSalt(10);
-    const hashPassword = await bcrypt.hash(password, Salt);
+    // Hash the password
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
 
-    if (role === "guest") {
-      user = new User({
-        name,
-        email,
-        password: hashPassword,
-        // phosto,
-        // gender,
-        // role,
-      });
-    }
-
-    if (role === "host") {
-      user = Host({
-        name,
-        email,
-        password: hashPassword,
-        phosto,
-        gender,
-        role,
-      });
-    }
+    // Create a new user (initially all users are 'guest')
+    user = new User({
+      name,
+      email,
+      password: hashedPassword,
+      photo,
+      gender,
+      role: 'guest', // All new users start as 'guest'
+    });
 
     await user.save();
 
@@ -61,39 +41,31 @@ export const register = async (req, res) => {
 };
 
 export const login = async (req, res) => {
-  const { email } = req.body;
+  const { email, password } = req.body;
+
   try {
-    let user = null;
+    // Find user by email
+    const user = await User.findOne({ email });
 
-    const guest = await User.findOne({ email });
-    const host = await host.findOne({ email });
-
-    if (guest) {
-      user = guest;
-    }
-    if (host) {
-      user = host;
-    }
-
-    //check if user exist or not
+    // Check if user exists
     if (!user) {
-      return res.Status(404).json({ message: "User not found" });
+      return res.status(404).json({ message: "User not found" });
     }
 
-    //compare password
-    const isPasswordMatch = await bcrypt.compare(req.body.password, user.password);
-
+    // Compare passwords
+    const isPasswordMatch = await bcrypt.compare(password, user.password);
     if (!isPasswordMatch) {
-      return res.status(400).json({ status: false, message: "Invalid credential" });
+      return res.status(400).json({ message: "Invalid credentials" });
     }
 
-    //get token
+    // Generate token
     const token = generateToken(user);
 
-    const { password, role, appointments, ...rest } = user._doc;
+    // Exclude sensitive fields from the response
+    const { password, ...rest } = user._doc;
 
-    res.status(200).json({ status: true, message: "Successfully login", token, data: { ...rest }, role });
+    res.status(200).json({ success: true, message: "Successfully logged in", token, data: rest, role: user.role });
   } catch (err) {
-    res.status(400).json({ status: false, message: "Failed to login" });
+    res.status(500).json({ success: false, message: "Failed to login" });
   }
 };

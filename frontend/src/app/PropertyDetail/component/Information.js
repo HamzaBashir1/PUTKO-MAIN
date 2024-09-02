@@ -5,7 +5,7 @@ import { CiLock } from 'react-icons/ci'
 
 const Information = () => {
   return (
-    <div className='rounded-lg p-6'>
+    <div className='rounded-lg p-6 mt-5 bg-white mr-[440px] ml-[18px] '>
       <h1 className='font-bold text-xl mb-4'>Information about accommodation</h1>
       <p className='mb-4'>
         The entire object | <span>8 persons</span> | 3 bedrooms | 3 bathrooms

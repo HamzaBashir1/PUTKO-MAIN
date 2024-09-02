@@ -52,7 +52,7 @@ const DateComponent = () => {
   };
 
   return (
-    <div className="p-6 rounded-lg bg-white mr-[58px] ml-[18px] -mt-32">
+    <div className="p-6 rounded-lg bg-white mr-[440px] ml-[18px] -mt-32">
       <div className="flex justify-around">
         <div className="w-1/2">
           <h3 className="text-center text-lg mb-4">August 2024</h3>
