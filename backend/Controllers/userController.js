@@ -1,7 +1,6 @@
-// controllers/userController.js
-const User = require('../models/UserSchema');
+import User from '../models/User.js';
 
-exports.purchasePackage = async (req, res) => {
+export async function purchasePackage(req, res) {
   try {
     const user = await User.findById(req.user.id);
 
@@ -18,4 +17,4 @@ exports.purchasePackage = async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
-};
+}

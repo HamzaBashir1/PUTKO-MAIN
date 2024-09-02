@@ -1,6 +1,6 @@
-const User = require('../models/UserSchema');
+import User from '../models/User.js';
 
-exports.createAdmin = async (req, res) => {
+export async function createAdmin(req, res) {
   try {
     const canCreateAdmin = await User.canCreateAdmin();
 
@@ -22,4 +22,4 @@ exports.createAdmin = async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
-};
+}
