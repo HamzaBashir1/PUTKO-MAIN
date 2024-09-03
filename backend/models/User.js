@@ -1,4 +1,5 @@
 import { Schema, model } from 'mongoose';
+
 const UserSchema = new Schema({
   username: {
     type: String,
@@ -16,7 +17,7 @@ const UserSchema = new Schema({
   },
   role: {
     type: String,
-    enum: ['guest', 'host', 'admin'],
+    enum: ['guest', 'host'],
     default: 'guest',
     required: true,
   },

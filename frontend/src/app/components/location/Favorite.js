@@ -9,6 +9,7 @@ import Orava1 from '../../../../public/Orava1.png'
 import Pieniny from '../../../../public/Pieniny.png'
 import Herohronie from '../../../../public/Herohronie.png'
 import Sleep from '../../../../public/Sleep.png'
+import Link from 'next/link';
 
 const locations = [
   { name: 'High Tatras', image: HighTatras, count: 551 },
@@ -29,6 +30,7 @@ const Favorite = () => {
   return (
     <div className='p-4 md:p-6 lg:p-8 mx-4 md:mx-6 lg:mx-8'>
       {/* Grid for all items */}
+      <Link href="/List-Page">
       <div className='hidden lg:grid lg:grid-cols-4 gap-6'>
         {locations.map((location, index) => (
           <div
@@ -50,7 +52,7 @@ const Favorite = () => {
           </div>
         ))}
       </div>
-
+      </Link>
       {/* Grid for first four items on mobile */}
       <div className='lg:hidden'>
         <div className='grid grid-cols-1 gap-6'>
