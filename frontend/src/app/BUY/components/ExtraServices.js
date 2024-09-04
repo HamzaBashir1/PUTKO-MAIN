@@ -1,5 +1,6 @@
 "use client"
 import React from 'react'
+import Cards from './Cards'
 
 function ExtraServices() {
     const Card = ({ title, location, price, image }) => (
@@ -19,7 +20,7 @@ function ExtraServices() {
     <div>
     <div className="container p-6 mx-auto">
   <h1 className="mb-6 text-4xl font-bold text-center">Extra Services</h1>
-  <p className="mb-8 text-center text-gray-600 mx-auto max-w-3xl">
+  <p className="max-w-3xl mx-auto mb-8 text-center text-gray-600">
     Use the potential of your accommodation <b>  to the maximum </b>  and try extra
     services that will enable you not only to highlight your offer, but also
     to get higher in the search results. This way, you will significantly
@@ -27,11 +28,11 @@ function ExtraServices() {
     - higher revenues.
   </p>
 
-  <div className="flex flex-col md:flex-row items-start gap-8">
+  <div className="flex flex-col items-start gap-8 md:flex-row">
     {/* Title and Description Section */}
     <div className="flex-1">
       <h2 className="mb-4 text-xl font-semibold">Special Prices and Discounts</h2>
-      <p className="text-gray-600 mr-0 md:mr-28">
+      <p className="mr-0 text-gray-600 md:mr-28">
         Set discounted prices for long stays, for early bookings, or just a
         reduced price for any period from – to. The highlighted discounted
         price is then displayed in search results and in the accommodation
@@ -40,48 +41,28 @@ function ExtraServices() {
     </div>
 
     {/* Cards Section */}
-    <div className="flex flex-col md:flex-row gap-6">
-      <Card
-        title="The Lounge & Bar"
-        location="2 guests, 1 bedroom - 2 beds"
-        price="$511"
-        image="/Pieniny.png"
-      />
-      <Card
-        title="The Lounge & Bar"
-        location="2 guests, 1 bedroom - 2 beds"
-        price="$511"
-        image="/Pieniny.png"
-      />
+    <div className="flex flex-col gap-6 md:flex-row">
+    <Cards/>
+      <Cards/>
     </div>
   </div>
 </div>
 
 <div className="container p-6 mx-auto">
 <h1 className="mb-6 text-2xl font-bold text-center"></h1>
-<p className="mb-8 text-center text-gray-600 mx-auto max-w-3xl">
+<p className="max-w-3xl mx-auto mb-8 text-center text-gray-600">
   
 </p>
 
-<div className="flex flex-col-reverse lg:flex-1 md:flex-row items-start gap-8">
+<div className="flex flex-col-reverse items-start gap-8 lg:flex-1 md:flex-row">
   {/* Cards Section */}
-  <div className="flex flex-col md:flex-row gap-6 ">
-    <Card
-      title="The Lounge & Bar"
-      location="2 guests, 1 bedroom - 2 beds"
-      price="$511"
-      image="/Pieniny.png"
-    />
-    <Card
-      title="The Lounge & Bar"
-      location="2 guests, 1 bedroom - 2 beds"
-      price="$511"
-      image="/Pieniny.png"
-    />
+  <div className="flex flex-col gap-6 md:flex-row ">
+  <Cards/>
+  <Cards/>
   </div>
 
   {/* Title and Description Section */}
-  <div className=" flex-col">
+  <div className="flex-col ">
     <h2 className="mb-4 text-xl font-semibold">Top</h2>
     <p className="text-gray-600 md:mr-28">
       With the Top service, your accommodation will not only
@@ -96,11 +77,11 @@ function ExtraServices() {
 
 <div className="container p-6 mx-auto">
 <h1 className="mb-6 text-2xl font-bold text-center"></h1>
-<p className="mb-8 text-center text-gray-600 mx-auto max-w-3xl">
+<p className="max-w-3xl mx-auto mb-8 text-center text-gray-600">
   
 </p>
 
-<div className="flex flex-col md:flex-row items-start gap-8">
+<div className="flex flex-col items-start gap-8 md:flex-row">
   {/* Title and Description Section */}
   <div className="flex-1">
     <h2 className="mb-4 text-xl font-semibold">Premium</h2>
@@ -113,19 +94,9 @@ function ExtraServices() {
   </div>
 
   {/* Cards Section */}
-  <div className="flex flex-col md:flex-row gap-6 flex-1">
-    <Card
-      title="The Lounge & Bar"
-      location="2 guests, 1 bedroom - 2 beds"
-      price="$511"
-      image="/Pieniny.png"
-    />
-    <Card
-      title="The Lounge & Bar"
-      location="2 guests, 1 bedroom - 2 beds"
-      price="$511"
-      image="/Pieniny.png"
-    />
+  <div className="flex flex-col flex-1 gap-6 md:flex-row">
+  <Cards/>
+  <Cards/>
   </div>
 </div>
 </div>

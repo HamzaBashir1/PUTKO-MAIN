@@ -7,6 +7,16 @@ import Date from './component/Date';
 import Photo from './component/Photo';
 import Information from './component/Information'
 import ReservationCard from './component/ReservationCard'
+import Ratings from './component/Ratings';
+import Overlook from './component/Overlook';
+import EMail from './component/EMail';
+import Diet from './component/Diet';
+import Persons from './component/Persons';
+import CommonSection from '../List-Page/component/CommonSection';
+
+import WeatherForecast from './component/WeatherForecast';
+import Accommodation from './component/Accommodation';
+
 
 const Page = () => {
   
@@ -19,7 +29,15 @@ const Page = () => {
       <Date />
     <Information/>
     <Location/>
-      
+    
+    <Persons/>
+    <Accommodation/>
+    <Diet/>
+    <Overlook/>
+    <Ratings/>
+    <WeatherForecast/>
+    <CommonSection/>
+      <EMail/>
       {/* <div className='flex flex-row'>
         <div className='flex-1'>
             

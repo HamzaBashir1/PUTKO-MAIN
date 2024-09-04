@@ -3,14 +3,14 @@ import React from 'react'
 
 function Testimonials() {
     const TestimonialCard = ({ image, title, location, description, name, role }) => (
-        <div className="flex-shrink-0 w-full sm:w-80 bg-gray-800 text-white rounded-lg overflow-hidden shadow-lg m-4">
-          <img src={image} alt={title} className="w-full h-48 object-cover" />
+        <div className="flex-shrink-0 w-full m-4 overflow-hidden text-white bg-gray-800 rounded-lg shadow-lg sm:w-80">
+          <img src={image} alt={title} className="object-cover w-full h-48" />
           <div className="p-6">
-            <h3 className="text-lg font-semibold mb-2">{title}</h3>
-            <p className="text-sm text-gray-400 mb-4">{location}</p>
-            <p className="text-sm mb-6">{description}</p>
+            <h3 className="mb-2 text-lg font-semibold">{title}</h3>
+            <p className="mb-4 text-sm text-gray-400">{location}</p>
+            <p className="mb-6 text-sm">{description}</p>
             <div className="flex items-center">
-              <div className="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center">
+              <div className="flex items-center justify-center w-10 h-10 bg-gray-600 rounded-full">
                 {/* Placeholder for user avatar */}
               </div>
               <div className="ml-3">
@@ -24,16 +24,16 @@ function Testimonials() {
       
   return (
     <div>
-    <div className="bg-gray-900 py-12 px-6">
-    <h2 className="text-center text-3xl text-white font-bold mb-8">They said about us</h2>
+    <div className="px-6 py-12 bg-gray-900">
+    <h2 className="mb-8 text-3xl font-bold text-center text-white">They said about us</h2>
     <div className="relative flex overflow-x-auto lg:overflow-visible snap-x">
       {/* Left arrow */}
-      <button className="hidden lg:flex absolute left-0 z-10 bg-gray-700 text-white rounded-full w-10 h-10 items-center justify-center -ml-5">
+      <button className="absolute left-0 z-10 items-center justify-center hidden w-10 h-10 -ml-5 text-white bg-gray-700 rounded-full lg:flex">
         &#8592;
       </button>
       
       {/* Testimonial Cards */}
-      <div className="flex space-x-6 px-8 lg:px-20">
+      <div className="flex px-8 space-x-6 lg:px-20">
         <TestimonialCard
           image="/Pieniny.png"
           title="Bungalow in the heart of Liptov"
@@ -42,35 +42,11 @@ function Testimonials() {
           name="Gorazd"
           role="Owner"
         />
-        <TestimonialCard
-          image="/Pieniny.png"
-          title="Modern Tiny house with sauna in Liptov countryside"
-          location="Cottage, Liptovská Mara, Slovakia"
-          description="I really like the clear and modern website of Fiemso. I would especially highlight the pairing of the calendar with other services."
-          name="Gorazd"
-          role="Owner"
-        />
-        <TestimonialCard
-          image="/Pieniny.png"
-          title="Sweet Home"
-          location="Cottage, Topoľčany, Slovakia"
-          description="I would like to thank you for your professionalism and prompt solution to various situations in terms of help and support."
-          name="Ingrid"
-          role="Owner"
-        />
-        <TestimonialCard
-          image="/Pieniny.png"
-          title="Sweet Home"
-          location="Cottage, Topoľčany, Slovakia"
-          description="I would like to thank you for your professionalism and prompt solution to various situations in terms of help and support."
-          name="Ingrid"
-          role="Owner"
-        />
-        
+       
       </div>
 
       {/* Right arrow */}
-      <button className="hidden lg:flex absolute right-0 z-10 bg-gray-700 text-white rounded-full w-10 h-10 items-center justify-center -mr-5">
+      <button className="absolute right-0 z-10 items-center justify-center hidden w-10 h-10 -mr-5 text-white bg-gray-700 rounded-full lg:flex">
         &#8594;
       </button>
     </div>
