@@ -2,13 +2,21 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import userRoutes from "./Routes/userRoutes.js"; // Added `.js` extension
-import adminRoutes from "./Routes/adminRoutes.js"; // Added `.js` extension
+import authRoutes from './Routes/auth.js'
+import userRoutes from "./Routes/user.js"; 
+// import adminRoutes from "./Routes/adminRoutes.js"; 
+import cors from "cors";
+
 
 dotenv.config();
 
 const app = express();
 const Port = process.env.Port || 8000;
+
+
+const corsOptions = {
+  origin: true,
+};
 
 app.get("/", (req, res) => {
   res.send("API is working");
@@ -28,8 +36,10 @@ const connectDB = async () => {
 // Middleware
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors(corsOptions));
+app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
-app.use('/api/admin', adminRoutes);
+// app.use('/api/admin', adminRoutes);
 
 app.listen(Port, () => {
   connectDB();

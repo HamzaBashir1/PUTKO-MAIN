@@ -1,4 +1,4 @@
-import User from "../models/User.js";
+import User from "../models/User.js"
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 
@@ -9,31 +9,35 @@ const generateToken = (user) => {
 };
 
 export const register = async (req, res) => {
-  const { email, password, username } = req.body;
+  const { email, password, name, role, photo, gender } = req.body;
 
   try {
-    // Check if the user already exists by email or username
-    let user = await User.findOne({ $or: [{ email }, { username }] });
+    let user = await User.findOne({ email });
+
+    // Check if user exists
     if (user) {
-      return res.status(400).json({ success: false, message: "User already exists" });
+      return res.status(400).json({ message: "User already exists" });
     }
 
-    // Hash the password
+    // Hash password
     const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
+    const hashPassword = await bcrypt.hash(password, salt);
 
-    // Create a new user
+    // Create new user
     user = new User({
+      name,
       email,
-      password: hashedPassword,
-      username, // Include username if you are using it
+      password: hashPassword,
+      photo,
+      gender,
+      role,
     });
 
     await user.save();
 
     res.status(201).json({ success: true, message: "User successfully created" });
   } catch (err) {
-    res.status(500).json({ success: false, message: "Internal server error", err });
+    res.status(500).json({ success: false, message: "Internal server error" });
   }
 };
 
@@ -41,60 +45,34 @@ export const login = async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    // Validate request body
-    if (!email || !password) {
-      return res.status(400).json({ success: false, message: "Email and password are required" });
-    }
-
-    // Find user by email
+    // Find user
     const user = await User.findOne({ email });
-    
+
     // Check if user exists
     if (!user) {
-      return res.status(404).json({ success: false, message: "User not found" });
+      return res.status(404).json({ message: "User not found" });
     }
 
-    // Compare passwords
+    // Compare password
     const isPasswordMatch = await bcrypt.compare(password, user.password);
+
     if (!isPasswordMatch) {
-      return res.status(400).json({ success: false, message: "Invalid credentials" });
+      return res.status(400).json({ message: "Invalid credentials" });
     }
 
     // Generate token
     const token = generateToken(user);
 
-    // Exclude sensitive fields from the response
-    const { password: userPassword, ...rest } = user._doc;
+    const { password: userPassword, ...userData } = user._doc;
 
     res.status(200).json({
       success: true,
       message: "Successfully logged in",
       token,
-      data: rest,
+      data: userData,
       role: user.role,
     });
   } catch (err) {
-    console.error("Login error:", err); // Log the error for debugging
-    res.status(500).json({ success: false, message: "Internal server error", err: err.message });
+    res.status(500).json({ message: "Failed to login" });
   }
 };
-
-
-export async function purchasePackage(req, res) {
-  try {
-    const user = await User.findById(req.user.id);
-
-    if (!user) {
-      return res.status(404).json({ message: 'User not found' });
-    }
-
-    // Update user's role and purchase status
-    user.hasPurchasedPackage = true;
-    user.role = 'host';
-    await user.save();
-
-    res.json({ message: 'Package purchased successfully, role updated to host.' });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-}
