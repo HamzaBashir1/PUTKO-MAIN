@@ -4,16 +4,16 @@ function ContactSection() {
   return (
     <div>
     <div
-    className="relative flex items-center justify-start h-screen bg-center bg-cover"
+    className="relative flex items-center justify-start bg-center h-[500px]"
     style={{ backgroundImage: "url('/bn.jpg')" }}
   >
     {/* Overlay for better text visibility */}
     <div className="absolute inset-0 bg-black opacity-40"></div>
 
     {/* Content Container */}
-    <div className="relative z-10 max-w-md px-8 py-16 mx-8 bg-opacity-0">
+    <div className="relative z-10 max-w-md py-16 mx-8 bg-opacity-0 lg:px-8">
       <h2 className="mb-4 text-3xl font-bold text-white">Do you have questions?</h2>
-      <p className="mb-8 text-lg text-white">
+      <p className="mb-8 text-sm text-white lg:text-lg">
         Write to us, we will contact you.
       </p>
       <div className="flex flex-col gap-4">
@@ -21,7 +21,7 @@ function ContactSection() {
         <button className="px-4 py-2 text-white transition duration-200 bg-[#4FBE9F] rounded hover:bg-green-600">
           Write a message
         </button>
-        <button className="px-4 py-2 text-white transition duration-200 bg-slate-500 rounded hover:bg-gray-800">
+        <button className="px-4 py-2 text-white transition duration-200 rounded bg-slate-500 hover:bg-gray-800">
           Add accommodation and try
         </button>
       </div>

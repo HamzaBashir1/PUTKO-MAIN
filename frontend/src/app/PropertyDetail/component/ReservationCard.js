@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import { useState,useEffect } from 'react';
 import Overview from './Overview';
@@ -43,66 +44,66 @@ const ReservationCard = () => {
   };
   return (
     <div className=' bg-[#f8f8f8]'>
-        <div className='flex flex-col lg:flex-row p-4 lg:space-x-8'>
+        <div className='flex flex-col p-4 lg:flex-row lg:space-x-8'>
             <div className='flex-1'>
             <Overview />
             
             </div>
-            <div className='bg-white p-5 rounded-lg shadow-lg'>
-            <div className="flex flex-col sm:flex-row justify-between mb-4">
-                <h1 className="font-bold text-xl sm:text-2xl">${nightlyRate} /<span className="text-sm">night</span></h1>
-                <p className="font-bold text-xl sm:text-2xl">5.0</p>
+            <div className='p-5 mt-5 bg-white rounded-lg'>
+            <div className="flex justify-between mx-5 mb-4 sm:flex-row">
+                <h1 className="text-xl font-bold sm:text-2xl">${nightlyRate} /<span className="text-sm">night</span></h1>
+                <p className="text-xl font-bold sm:text-2xl">5.0</p>
             </div>
 
             {/* Reservation Details */}
-            <div className="p-4 rounded-lg mb-4 bg-white shadow-sm">
-                <div className="flex flex-col sm:flex-row justify-between mb-4 space-y-4 sm:space-y-0">
-                <div className="flex flex-col flex-1 relative">
+            <div className="p-4 mb-4 bg-white rounded-lg ">
+                <div className="flex flex-col justify-between mb-4 space-y-4 sm:flex-row sm:space-y-0">
+                <div className="relative flex flex-col flex-1">
                     <input 
                     type="date" 
-                    className="border rounded-lg p-2 w-full"
+                    className="w-full p-2 border rounded-lg h-[55px]"
                     value={checkInDate}
                     onChange={(e) => setCheckInDate(e.target.value)}
                     />
-                    <label className="absolute left-2 top-2 text-sm font-bold">CHECK-IN</label>
+                    <label className="absolute left-2 top-1 text-[8px] font-bold">CHECK-IN</label>
                 </div>
-                <div className="flex flex-col flex-1 relative">
+                <div className="relative flex flex-col flex-1">
                     <input 
                     type="date" 
-                    className="border rounded-lg p-2 w-full"
+                    className="w-full p-2 border rounded-lg h-[55px]"
                     value={checkOutDate}
                     onChange={(e) => setCheckOutDate(e.target.value)}
                     />
-                    <label className="absolute left-2 top-2 text-sm font-bold">CHECK-OUT</label>
+                    <label className="absolute text-sm font-bold left-2 text-[8px] top-1">CHECK-OUT</label>
                 </div>
                 </div>
                 <div className="flex flex-col">
                 <div className="relative mb-4">
                     <input 
                     type="number" 
-                    className="border rounded-lg p-2 w-full"
+                    className="w-full p-2 border rounded-lg h-[55px]"
                     min="1"
                     value={guests}
                     onChange={(e) => setGuests(parseInt(e.target.value))}
                     />
-                    <label className="absolute left-2 top-2 text-sm font-bold">GUESTS</label>
+                    <label className="absolute text-[8px] font-bold left-2 top-2">GUESTS</label>
                 </div>
                 <button 
-                    className="w-full bg-green-500 text-white py-2 rounded-lg font-bold"
+                    className="w-full py-2 font-bold text-white bg-green-500 rounded-lg"
                     onClick={handleReserve}
                 >
                     Reserve
                 </button>
                 {reserved ? (
-                    <p className="text-center text-sm text-green-500 mt-2">Reservation successful! You won't be charged yet.</p>
+                    <p className="mt-2 text-sm text-center text-green-500">Reservation successful! You won't be charged yet.</p>
                 ) : (
-                    <p className="text-center text-sm mt-2">You won't be charged yet</p>
+                    <p className="mt-2 text-sm text-center">You won't be charged yet</p>
                 )}
                 </div>
             </div>
 
             {/* Pricing Breakdown */}
-            <div className="p-4 rounded-lg bg-white shadow-sm">
+            <div className="p-4 bg-white rounded-lg ">
                 <div className="flex justify-between mb-2">
                 <p>${nightlyRate} * {nights} nights</p>
                 <p>${nightlyRate * nights}</p>

@@ -1,12 +1,12 @@
-import React from 'react'
-import { BiGlobe } from 'react-icons/bi'
-import { BsMailbox, BsReply, BsCheck } from 'react-icons/bs' // BsTick is not a valid icon, replaced with BsCheck
-import { CiLock } from 'react-icons/ci'
+import React from 'react';
+import { BiGlobe } from 'react-icons/bi';
+import { BsMailbox, BsReply, BsCheck } from 'react-icons/bs';
+import { CiLock } from 'react-icons/ci';
 
 const Information = () => {
   return (
-    <div className='rounded-lg p-6 mt-5 bg-white mr-[440px] ml-[18px] '>
-      <h1 className='font-bold text-xl mb-4'>Information about accommodation</h1>
+    <div className='rounded-lg p-6 mt-5 bg-white lg:mr-[440px] lg:ml-[18px]'>
+      <h1 className='mb-4 text-xl font-bold'>Information about accommodation</h1>
       <p className='mb-4'>
         The entire object | <span>8 persons</span> | 3 bedrooms | 3 bathrooms
       </p>
@@ -25,9 +25,9 @@ const Information = () => {
 
       <hr className='my-12 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10' />
 
-      <div className='grid grid-cols-2 gap-4 mb-12'>
+      <div className='grid grid-cols-1 gap-4 mb-12 sm:grid-cols-2'>
         <div className='bg-[#E7EAEE] p-5'>
-          <h1 className='font-bold mb-2'>Equipment and services</h1>
+          <h1 className='mb-2 font-bold'>Equipment and services</h1>
           <div className='flex items-center mb-2'>
             <BsCheck className='mr-2' />
             <p>Free Wi-Fi</p>
@@ -47,7 +47,7 @@ const Information = () => {
         </div>
 
         <div className='bg-[#E7EAEE] p-5'>
-          <h1 className='font-bold mb-2'>Wellness & spa</h1>
+          <h1 className='mb-2 font-bold'>Wellness & spa</h1>
           <div className='flex items-center mb-2'>
             <BsCheck className='mr-2' />
             <p>Outdoor pool</p>
@@ -67,7 +67,7 @@ const Information = () => {
         </div>
 
         <div className='bg-[#E7EAEE] p-5'>
-          <h1 className='font-bold mb-2'>Sport and entertainment</h1>
+          <h1 className='mb-2 font-bold'>Sport and entertainment</h1>
           <div className='flex items-center mb-2'>
             <BsCheck className='mr-2' />
             <p>Bicycle storage</p>
@@ -83,7 +83,7 @@ const Information = () => {
         </div>
 
         <div className='bg-[#E7EAEE] p-5'>
-          <h1 className='font-bold mb-2'>Children</h1>
+          <h1 className='mb-2 font-bold'>Children</h1>
           <div className='flex items-center mb-2'>
             <BsCheck className='mr-2' />
             <p>Children are welcome here</p>
@@ -128,9 +128,9 @@ const Information = () => {
 
       <hr className='my-12 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10' />
 
-      <div className='flex justify-between items-center'>
-        <div className='flex items-center'>
-          <img src='/map' alt='Map' className='rounded-full h-12 w-12 mr-4' />
+      <div className='flex flex-col items-center justify-between sm:flex-row'>
+        <div className='flex items-center mb-4 sm:mb-0'>
+          <img src='/map' alt='Map' className='w-12 h-12 mr-4 rounded-full' />
           <div>
             <h1 className='font-bold'>"Villa LIMACO Jasensk</h1>
             <p>Member since February 2, 2023</p>
@@ -138,14 +138,14 @@ const Information = () => {
         </div>
 
         <div>
-          <button className='bg-blue-500 text-white p-2 rounded-lg flex items-center'>
+          <button className='flex items-center p-2 text-white bg-blue-500 rounded-lg'>
             <BsMailbox className='mr-2' />
             Contact accommodation
           </button>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Information
+export default Information;

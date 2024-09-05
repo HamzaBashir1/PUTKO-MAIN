@@ -15,32 +15,34 @@ import HowToStart from './components/HowToStart'
 import FAQSection from './components/FAQSection'
 import ContactSection from './components/ContactSection'
 import SimplicitySection from './components/SimplicitySection'
+import Navbar from './components/Navbar';
 
 function page() {
   return (
     <div className=''>
-    <div className='lg:ml-16 ml-0'>
-      <Hero/>
-      <Features/>
-      </div>
+      <Navbar/>
+      <div className='ml-0 lg:ml-16'>
+        <Hero/>
+        <Features/>
+        </div>
+        
+        <SubscriptionPriceList/>
+        
+        <Featuresection/>
       
-      <SubscriptionPriceList/>
+        
+        
+        <SimplicitySection/>
+        <ControlPanel/>
       
-      <Featuresection/>
-     
-      
-      
-      <SimplicitySection/>
-      <ControlPanel/>
-     
-      <ExtraServices/>
-      <Pri/>
-      <HowToStart/>
-      <Testimonials/>
-      <FAQSection/>
-      <ContactSection/>
+        <ExtraServices/>
+        <Pri/>
+        <HowToStart/>
+        <Testimonials/>
+        <FAQSection/>
+        <ContactSection/>
 
-    </div>
+      </div>
   )
 }
 

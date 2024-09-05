@@ -5,15 +5,15 @@ import location from '../../../../public/location.png';
 
 const Location = () => {
   return (
-    <div className='rounded-lg p-6 mt-5 bg-white mr-[440px] ml-[18px]'>
-      <h1 className='text-xl md:text-2xl font-bold mb-2'>Location</h1>
-      <p className=' p-2 rounded-md mb-4'>
+    <div className='p-4 sm:p-6 mt-5 bg-white rounded-lg lg:mr-[440px] lg:ml-[18px]'>
+      <h1 className='mb-2 text-lg font-bold sm:text-xl md:text-2xl'>Location</h1>
+      <p className='p-2 mb-4 text-sm rounded-md sm:text-base'>
         Slovakia / Martin district / Bela - Dulice
       </p>
 
       <Image src={location} alt="Location" className='w-full h-auto mb-4' />
 
-      <p className='mb-4'>
+      <p className='mb-4 text-sm sm:text-base'>
         <span className='font-bold'>Villa LIMACO Jasenská Dolina</span>
         Villa LIMACO Jasenská Dolina is located in the area of ​​Jasenská Dolina on the outskirts of the village of
         Turčianske Jaseno, just 1 km from the Jasenská Dolina Ski Center and the Jasenská Bike Park. You can also Show More
@@ -22,57 +22,54 @@ const Location = () => {
       <hr className='mb-4' />
 
       <div className='space-y-4'>
-        <div className='flex flex-col md:flex-row justify-between items-center'>
-          <div className='flex items-center space-x-2'>
-            <div className='bg-slate-200 p-2 rounded-full'>
+        <div className='flex items-center justify-between md:flex-row'>
+          <div className='flex flex-row items-center space-x-2'>
+            <div className='p-2 rounded-full bg-slate-200'>
               <ImSpoonKnife />
             </div>
-            <p className='text-sm md:text-base'>Restaurant</p>
+            <p className='text-sm sm:text-base'>Restaurant</p>
           </div>
-          <p className='text-sm md:text-base'>1.10KM</p>
+          <p className='text-sm sm:text-base'>1.10KM</p>
         </div>
         <hr className='mb-4' />
-        <div className='flex flex-col md:flex-row justify-between items-center'>
-          <div className='flex items-center space-x-2'>
-            <div className='bg-slate-200 p-2 rounded-full'>
+        <div className='flex items-center justify-between md:flex-row'>
+          <div className='flex flex-row items-center space-x-2'>
+            <div className='p-2 rounded-full bg-slate-200'>
               <ImCart />
             </div>
-            <p className='text-sm md:text-base'>Food</p>
+            <p className='text-sm sm:text-base'>Food</p>
           </div>
-          <p className='text-sm md:text-base'>1.50KM</p>
+          <p className='text-sm sm:text-base'>1.50KM</p>
         </div>
         <hr className='mb-4' />
-        <div className='flex flex-col md:flex-row justify-between items-center'>
-          <div className='flex items-center space-x-2'>
-            <div className='bg-slate-200 p-2 rounded-full'>
+        <div className='flex items-center justify-between md:flex-row'>
+          <div className='flex flex-row items-center space-x-2'>
+            <div className='p-2 rounded-full bg-slate-200'>
               <ImPieChart />
             </div>
-            <p className='text-sm md:text-base'>Supermarket</p>
+            <p className='text-sm sm:text-base'>Supermarket</p>
           </div>
-          <p className='text-sm md:text-base'>8KM</p>
+          <p className='text-sm sm:text-base'>8KM</p>
         </div>
         <hr className='mb-4' />
-        {/* Example placeholder components for Bus and Airport */}
-        <div className='flex flex-col md:flex-row justify-between items-center'>
-          <div className='flex items-center space-x-2'>
-            <div className='bg-slate-200 p-2 rounded-full'>
-              {/* Replace with actual Bus icon */}
+        <div className='flex items-center justify-between md:flex-row'>
+          <div className='flex flex-row items-center space-x-2'>
+            <div className='p-2 rounded-full bg-slate-200'>
               <span className='text-xl'>🚍</span>
             </div>
-            <p className='text-sm md:text-base'>Train Station</p>
+            <p className='text-sm sm:text-base'>Train Station</p>
           </div>
-          <p className='text-sm md:text-base'>8KM</p>
+          <p className='text-sm sm:text-base'>8KM</p>
         </div>
         <hr className='mb-4' />
-        <div className='flex flex-col md:flex-row justify-between items-center'>
-          <div className='flex items-center space-x-2'>
-            <div className='bg-slate-200 p-2 rounded-full'>
-              {/* Replace with actual Airport icon */}
+        <div className='flex items-center justify-between md:flex-row'>
+          <div className='flex flex-row items-center space-x-2'>
+            <div className='p-2 rounded-full bg-slate-200'>
               <span className='text-xl'>✈️</span>
             </div>
-            <p className='text-sm md:text-base'>Airport</p>
+            <p className='text-sm sm:text-base'>Airport</p>
           </div>
-          <p className='text-sm md:text-base'>8KM</p>
+          <p className='text-sm sm:text-base'>8KM</p>
         </div>
         <hr className='mb-4' />
       </div>

@@ -7,21 +7,22 @@ import Date from './component/Date';
 import Photo from './component/Photo';
 import Information from './component/Information'
 import ReservationCard from './component/ReservationCard'
+import Navbar from './component/Navbar';
 import Ratings from './component/Ratings';
 import Overlook from './component/Overlook';
 import EMail from './component/EMail';
 import Diet from './component/Diet';
 import Persons from './component/Persons';
 import CommonSection from '../List-Page/component/CommonSection';
-
 import WeatherForecast from './component/WeatherForecast';
 import Accommodation from './component/Accommodation';
-
 
 const Page = () => {
   
 
   return (
+    <div>
+      <Navbar/>
     <div className='bg-[#f8f8f8]'>
       <Heading />
       <Photo />
@@ -29,7 +30,6 @@ const Page = () => {
       <Date />
     <Information/>
     <Location/>
-    
     <Persons/>
     <Accommodation/>
     <Diet/>
@@ -37,7 +37,7 @@ const Page = () => {
     <Ratings/>
     <WeatherForecast/>
     <CommonSection/>
-      <EMail/>
+    <EMail/>
       {/* <div className='flex flex-row'>
         <div className='flex-1'>
             
@@ -46,6 +46,7 @@ const Page = () => {
             
         </div>
       </div> */}
+    </div>
     </div>
   );
 }
