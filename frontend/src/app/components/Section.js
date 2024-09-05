@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import Glacier from '../../../public/Glacier.png';
 import mobile from '../../../public/mobile.png';
+import Link from 'next/link';
 
 const Section = () => {
   return (
@@ -26,9 +27,11 @@ const Section = () => {
             <h1 className='text-white text-4xl md:text-3xl font-bold mb-4'>
               Rent accommodation<br />with Putko
             </h1>
+            <Link href='/BUY'>
             <button className='bg-[#58CAAA] text-white px-4 py-2 rounded hover:bg-[#52c0a1]'>
               View Package
             </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -53,9 +56,11 @@ const Section = () => {
             <h1 className='text-white text-4xl md:text-3xl font-bold mb-4'>
               How selection and<br />booking work
             </h1>
+            <Link href='/BUY'>
             <button className='bg-[#58CAAA] text-white px-4 py-2 rounded hover:bg-[#52c0a1]'>
               View Package
             </button>
+            </Link>
           </div>
         </div>
       </div>

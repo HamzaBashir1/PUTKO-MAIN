@@ -49,7 +49,7 @@ const ReservationCard = () => {
             <Overview />
             
             </div>
-            <div className='p-5 mt-5 bg-white rounded-lg'>
+            <div className='p-5 bg-white rounded-lg mt-5'>
             <div className="flex justify-between mx-5 mb-4 sm:flex-row">
                 <h1 className="text-xl font-bold sm:text-2xl">${nightlyRate} /<span className="text-sm">night</span></h1>
                 <p className="text-xl font-bold sm:text-2xl">5.0</p>

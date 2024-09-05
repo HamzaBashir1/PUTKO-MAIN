@@ -21,7 +21,7 @@ function page() {
   return (
     <div className=''>
       <Navbar/>
-      <div className='ml-0 lg:ml-16'>
+      <div className='lg:ml-16 ml-0'>
         <Hero/>
         <Features/>
         </div>

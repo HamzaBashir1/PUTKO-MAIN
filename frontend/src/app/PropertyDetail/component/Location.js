@@ -6,8 +6,8 @@ import location from '../../../../public/location.png';
 const Location = () => {
   return (
     <div className='p-4 sm:p-6 mt-5 bg-white rounded-lg lg:mr-[440px] lg:ml-[18px]'>
-      <h1 className='mb-2 text-lg font-bold sm:text-xl md:text-2xl'>Location</h1>
-      <p className='p-2 mb-4 text-sm rounded-md sm:text-base'>
+      <h1 className='text-lg sm:text-xl md:text-2xl font-bold mb-2'>Location</h1>
+      <p className='p-2 rounded-md mb-4 text-sm sm:text-base'>
         Slovakia / Martin district / Bela - Dulice
       </p>
 
@@ -22,9 +22,9 @@ const Location = () => {
       <hr className='mb-4' />
 
       <div className='space-y-4'>
-        <div className='flex items-center justify-between md:flex-row'>
+        <div className='flex md:flex-row justify-between items-center'>
           <div className='flex flex-row items-center space-x-2'>
-            <div className='p-2 rounded-full bg-slate-200'>
+            <div className='bg-slate-200 p-2 rounded-full'>
               <ImSpoonKnife />
             </div>
             <p className='text-sm sm:text-base'>Restaurant</p>
@@ -32,9 +32,9 @@ const Location = () => {
           <p className='text-sm sm:text-base'>1.10KM</p>
         </div>
         <hr className='mb-4' />
-        <div className='flex items-center justify-between md:flex-row'>
+        <div className='flex md:flex-row justify-between items-center'>
           <div className='flex flex-row items-center space-x-2'>
-            <div className='p-2 rounded-full bg-slate-200'>
+            <div className='bg-slate-200 p-2 rounded-full'>
               <ImCart />
             </div>
             <p className='text-sm sm:text-base'>Food</p>
@@ -42,9 +42,9 @@ const Location = () => {
           <p className='text-sm sm:text-base'>1.50KM</p>
         </div>
         <hr className='mb-4' />
-        <div className='flex items-center justify-between md:flex-row'>
+        <div className='flex md:flex-row justify-between items-center'>
           <div className='flex flex-row items-center space-x-2'>
-            <div className='p-2 rounded-full bg-slate-200'>
+            <div className='bg-slate-200 p-2 rounded-full'>
               <ImPieChart />
             </div>
             <p className='text-sm sm:text-base'>Supermarket</p>
@@ -52,9 +52,9 @@ const Location = () => {
           <p className='text-sm sm:text-base'>8KM</p>
         </div>
         <hr className='mb-4' />
-        <div className='flex items-center justify-between md:flex-row'>
+        <div className='flex md:flex-row justify-between items-center'>
           <div className='flex flex-row items-center space-x-2'>
-            <div className='p-2 rounded-full bg-slate-200'>
+            <div className='bg-slate-200 p-2 rounded-full'>
               <span className='text-xl'>🚍</span>
             </div>
             <p className='text-sm sm:text-base'>Train Station</p>
@@ -62,9 +62,9 @@ const Location = () => {
           <p className='text-sm sm:text-base'>8KM</p>
         </div>
         <hr className='mb-4' />
-        <div className='flex items-center justify-between md:flex-row'>
+        <div className='flex md:flex-row justify-between items-center'>
           <div className='flex flex-row items-center space-x-2'>
-            <div className='p-2 rounded-full bg-slate-200'>
+            <div className='bg-slate-200 p-2 rounded-full'>
               <span className='text-xl'>✈️</span>
             </div>
             <p className='text-sm sm:text-base'>Airport</p>

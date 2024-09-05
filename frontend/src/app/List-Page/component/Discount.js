@@ -26,9 +26,7 @@ const Discount = () => {
           <div className='min-w-[80%] sm:min-w-[60%] md:min-w-[40%] lg:min-w-[20%] xl:min-w-[calc(20%-1.5rem)] snap-start'>
             <DiscountCard />
           </div>
-          <div className='min-w-[80%] sm:min-w-[60%] md:min-w-[40%] lg:min-w-[20%] xl:min-w-[calc(20%-1.5rem)] snap-start'>
-            <DiscountCard />
-          </div>
+         
         </div>
       </div>
     </div>

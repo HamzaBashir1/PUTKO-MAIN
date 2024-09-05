@@ -22,10 +22,10 @@ const FAQSection = () => {
   };
 
   return (
-    <div className="flex flex-col max-w-6xl mt-11 p-6 mx-auto lg:flex-row lg:space-x-12">
+    <div className="flex flex-col  mt-11 p-6 lg:mx-20 lg:flex-row lg:space-x-12">
       {/* Title Section */}
       <div className="mb-6 lg:w-1/3 lg:mb-0">
-        <h2 className="text-2xl font-bold text-left">Frequently asked questions</h2>
+        <h2 className="lg:text-2xl text-4xl font-bold text-left">Frequently asked questions</h2>
       </div>
       
       {/* FAQ Section */}

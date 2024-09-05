@@ -53,12 +53,12 @@ const DateComponent = () => {
 
   return (
     <div className="p-4 md:p-6 rounded-lg bg-white lg:mr-[440px] lg:ml-[18px] lg:-mt-32">
-      <div className="flex flex-col justify-around md:flex-row">
-        <div className="w-full mb-6 md:w-1/2 md:mb-0">
-          <h3 className="mb-4 text-base text-center md:text-lg">August 2024</h3>
+      <div className="flex flex-col md:flex-row justify-around">
+        <div className="w-full md:w-1/2 mb-6 md:mb-0">
+          <h3 className="text-center text-base md:text-lg mb-4">August 2024</h3>
           <div className="grid grid-cols-7 gap-1 md:gap-2">
             {daysOfWeek.map((day, index) => (
-              <div key={index} className="text-xs font-bold text-center md:text-base">
+              <div key={index} className="text-center text-xs md:text-base font-bold">
                 {day}
               </div>
             ))}
@@ -67,10 +67,10 @@ const DateComponent = () => {
         </div>
 
         <div className="w-full md:w-1/2">
-          <h3 className="mb-4 text-base text-center md:text-lg">September 2024</h3>
+          <h3 className="text-center text-base md:text-lg mb-4">September 2024</h3>
           <div className="grid grid-cols-7 gap-1 md:gap-2">
             {daysOfWeek.map((day, index) => (
-              <div key={index} className="text-xs font-bold text-center md:text-base">
+              <div key={index} className="text-center text-xs md:text-base font-bold">
                 {day}
               </div>
             ))}

@@ -3,7 +3,7 @@ import React from 'react'
 const Ratings = () => {
   return (
     <div>
-    <div className="max-w-4xl p-8 mx-auto my-10 bg-white rounded-lg shadow-lg">
+    <div className=" p-8  my-10 bg-white rounded-lg shadow-lg lg:mr-[440px] lg:ml-[18px] ">
     {/* Title Section */}
     <div className="flex flex-col items-start justify-between mb-6 lg:items-center sm:flex-row">
       <div className="text-left lg:text-left">

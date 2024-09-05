@@ -9,7 +9,7 @@ function EMail() {
 
     {/* Image */}
     <img
-      src='/Email1.png'
+      src='/PropertyDetail.png'
       alt='Email Banner'
       className='object-cover object-center w-full h-full'
     />

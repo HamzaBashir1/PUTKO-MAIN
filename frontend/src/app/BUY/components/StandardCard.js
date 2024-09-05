@@ -20,7 +20,7 @@ const StandardCard = () => {
         <Image src={label} alt="Label" />
       </div>
 
-      <div className="p-4 px-5 bg-white rounded-lg shadow-lg py-14">
+      <div className="bg-white py-14 px-5 rounded-lg shadow-lg p-4">
         {/* <button className="bg-[#4FBE9F] text-white px-4 py-2 text-xs rounded-full">The most advantageous</button> */}
         <h1 className='text-[#292A34] text-lg md:text-xl mt-2'>
           Standard <span className='text-[#292A34] text-lg md:text-xl'>9 months</span>
@@ -44,14 +44,14 @@ const StandardCard = () => {
         <hr className='my-4' />
         <div className='flex items-center justify-between'>
           <div>
-            <p className='text-xs md:text-sm'>Together in <br /><span className='text-xs font-bold md:text-sm'>9 months</span></p>
+            <p className='text-xs md:text-sm'>Together in <br /><span className='font-bold text-xs md:text-sm'>9 months</span></p>
           </div>
           <div className='text-right'>
-            <span className='mr-2 text-xs text-red-500 line-through md:text-sm'>
+            <span className='text-xs md:text-sm line-through text-red-500 mr-2'>
               298€
             </span>
             <br />
-            <span className='text-lg font-bold md:text-xl'>149€</span>
+            <span className='text-lg md:text-xl font-bold'>149€</span>
           </div>
         </div>
       </div>

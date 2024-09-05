@@ -10,7 +10,7 @@ function WeatherForecast() {
       ];
   return (
     <div>
-    <div className="max-w-4xl p-6 mx-auto my-10 bg-white rounded-lg shadow-lg">
+    <div className=" p-6  my-10 bg-white rounded-lg shadow-lg lg:mr-[440px] lg:ml-[18px] ">
     <div className="mb-6">
       <h2 className="mb-2 text-xl font-bold">Current weather</h2>
       <p className="text-gray-600">Weather forecast for the next few days</p>
