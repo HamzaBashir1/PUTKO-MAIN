@@ -15,7 +15,7 @@ const Port = process.env.Port || 8000;
 
 
 const corsOptions = {
-  origin: ["https://putko-main.vercel.app/"],
+  origin: ["https://putko-main.vercel.app"],
   methods: ["POST","GET"],
   Credential: true
 }
