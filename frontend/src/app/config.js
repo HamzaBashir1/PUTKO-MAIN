@@ -1,4 +1,4 @@
-export const Base_URL = "http://localhost:5000/api";
+export const Base_URL = "https://putko-main.vercel.app/api";
 
 export const token = typeof window !== 'undefined' ? localStorage.getItem("token") : null;
 export const user = typeof window !== 'undefined' ? localStorage.getItem("guest") : null;
