@@ -6,7 +6,6 @@ import { AuthContextProvider } from './context/AuthContext.js'
 import { ToastContainer } from "./Nexttoast";
 import 'react-toastify/dist/ReactToastify.css';
 
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
