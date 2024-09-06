@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation"; // Updated import for app directory
 import uploadImageToCloudinary from "../../utlis/uploadCloudinary.js";
 import { Base_URL, token } from "../../config"; // token removed since not used in this file
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 import HashLoader from "react-spinners/HashLoader";
 
 const Signup = () => {

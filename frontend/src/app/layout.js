@@ -3,7 +3,7 @@ import "./globals.css";
 import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer";
 import { AuthContextProvider } from './context/AuthContext.js'
-import { ToastContainer } from "react-toastify";
+// import { ToastContainer } from "react-toastify";
 
 const inter = Inter({ subsets: ["latin"] });
 

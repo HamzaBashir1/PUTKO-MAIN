@@ -3,6 +3,11 @@ import cookieParser from "cookie-parser";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import authRoutes from './Routes/auth.js'
+
+// import AdminauthRoutes from './Routes/AdminAuth.js'
+// import AdminRoutes from './Routes/Admin.js'
+import adminRouter from './Routes/adminRoutes.js';
+
 import userRoutes from "./Routes/user.js"; 
 // import adminRoutes from "./Routes/adminRoutes.js"; 
 import cors from "cors";
@@ -39,6 +44,9 @@ app.use(cookieParser());
 app.use(cors(corsOptions));
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/admin', adminRouter);
+// app.use('/api/adminAuth', AdminauthRoutes);
+// app.use('/api/admin', AdminRoutes);
 // app.use('/api/admin', adminRoutes);
 
 app.listen(Port, () => {
