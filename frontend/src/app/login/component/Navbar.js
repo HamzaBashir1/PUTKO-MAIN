@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef, useContext } from "react";
-import Link from "next/link"; // Correct import for Next.js
-import { FaHeart } from "react-icons/fa";
+import Link from "next/link";
+import { FaRegHeart } from "react-icons/fa";
 import { AuthContext } from "../../context/AuthContext"; // Assuming AuthContext is here
 
 const Navbar = () => {
@@ -10,8 +10,8 @@ const Navbar = () => {
   const menuRef = useRef(null);
   const { user, role, token } = useContext(AuthContext);
 
-  const handleStickyHeader = () => {
-    window.addEventListener("scroll", () => {
+  const handleScroll = () => {
+    if (headerRef.current) {
       if (
         document.body.scrollTop > 80 ||
         document.documentElement.scrollTop > 80
@@ -20,17 +20,19 @@ const Navbar = () => {
       } else {
         headerRef.current.classList.remove("sticky_header");
       }
-    });
+    }
   };
 
   useEffect(() => {
-    handleStickyHeader();
-    return () => window.removeEventListener("scroll", handleStickyHeader);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    menuRef.current.classList.toggle("show_menu");
+    if (menuRef.current) {
+      menuRef.current.classList.toggle("show_menu");
+    }
   };
 
   return (
@@ -44,49 +46,52 @@ const Navbar = () => {
           <img src="/putko.png" className="h-8" alt="Logo" />
         </Link>
 
-        {/* Right Side Icons and Menu Button */}
-        {token && user ? (
-          <div className="flex items-center space-x-4">
+        {/* Right Side Icons */}
+        <div className="flex items-center space-x-4">
+          {/* Profile or Login */}
+          {token && user ? (
             <Link
-              href={`/${role === "doctor" ? "doctors/profile/me" : "users/profile/me"}`}
+              href={`/${role === "guest" ? "/Host" : "/Host"}`}
               className="flex items-center"
             >
-              <figure className="w-[35px] h-[35px] rounded-full">
+              <figure className="w-[45px]">
                 <img src={user?.photo} className="w-full rounded-full" alt={user?.name} />
               </figure>
             </Link>
-            <FaHeart className="text-gray-900 dark:text-gray-100 text-xl hover:text-gray-600 dark:hover:text-gray-300 cursor-pointer" />
-            <button
-              onClick={toggleMenu}
-              className="p-2 w-10 h-10 text-sm text-gray-900 dark:text-gray-100 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600"
-              aria-controls="navbar-hamburger"
-              aria-expanded={isMenuOpen}
+          ) : (
+            <Link href="/login">
+              <button className="bg-[#4FBE9F] py-2 px-6 text-white font-[600] flex items-center justify-center rounded-lg">
+                Login
+              </button>
+            </Link>
+          )}
+          
+          {/* Menu Button */}
+          <FaRegHeart className="text-gray-900 dark:text-gray-100 text-xl hover:text-gray-600 dark:hover:text-gray-300 cursor-pointer" />
+          <button
+            onClick={toggleMenu}
+            className="p-2 w-10 h-10 text-sm text-gray-900 dark:text-gray-100 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600"
+            aria-controls="navbar-hamburger"
+            aria-expanded={isMenuOpen}
+          >
+            <span className="sr-only">Open main menu</span>
+            <svg
+              className="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
             >
-              <span className="sr-only">Open main menu</span>
-              <svg
-                className="w-5 h-5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 17 14"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M1 1h15M1 7h15M1 13h15"
-                />
-              </svg>
-            </button>
-          </div>
-        ) : (
-          <Link href="/login">
-            <button className="bg-primaryColor py-2 px-6 text-white font-[600] h-[44px] flex items-center justify-center rounded-[50px]">
-              Login
-            </button>
-          </Link>
-        )}
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}

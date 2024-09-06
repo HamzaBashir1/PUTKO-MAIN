@@ -1,9 +1,9 @@
 'use client';
-
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { BiSearch } from "react-icons/bi";
-import { FaHeart } from 'react-icons/fa';
+import { FaRegHeart } from "react-icons/fa";
+import { AuthContext } from "../context/AuthContext";
 
 const Search = () => {
   // Define the actual searchModal or mock implementation
@@ -27,6 +27,7 @@ const Search = () => {
 
 const Hero = ({ locationLabel, checkInLabel, checkOutLabel, guestLabel, searchModal }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, role, token } = useContext(AuthContext);
 
   const handleSearchClick = () => {
     if (searchModal && typeof searchModal.onOpen === 'function') {
@@ -44,19 +45,30 @@ const Hero = ({ locationLabel, checkInLabel, checkOutLabel, guestLabel, searchMo
     <div className="relative">
       <nav className="border-gray-200 bg-transparent dark:bg-transparent dark:border-gray-700 absolute top-0 left-0 w-full z-50">
         <div className="flex flex-wrap items-center justify-between mx-4 md:mx-20 p-4">
-          <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+          <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="/putko.png" className="h-8" alt="Logo" />
-          </a>
-          <div className="flex items-center space-x-4">
-          <Link href="/login">
-            <button className="bg-[#58CAAA] text-white px-6 py-2 rounded-lg hover:bg-[#3abd98] transition">
-              Log in
-            </button>
           </Link>
-            <FaHeart className="text-white text-xl hover:text-gray-300 cursor-pointer" />
+          <div className="flex items-center space-x-4">
+            {token && user ? (
+              <Link
+                href={`/${role === "guest" ? "/Host" : "/Host"}`}
+                className="flex items-center"
+              >
+                <figure className="w-[45px]">
+                  <img src={user?.photo} className="w-full rounded-full" alt={user?.name} />
+                </figure>
+              </Link>
+            ) : (
+              <Link href="/login">
+                <button className="bg-[#4FBE9F] py-2 px-6 text-white font-[600] flex items-center justify-center rounded-lg">
+                  Login
+                </button>
+              </Link>
+            )}
+            <FaRegHeart className="text-gray-900 dark:text-gray-100 text-xl hover:text-gray-600 dark:hover:text-gray-300 cursor-pointer" />
             <button
               onClick={toggleMenu}
-              className=" p-2 w-10 h-10 text-sm text-white rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              className="p-2 w-10 h-10 text-sm text-white rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
               aria-controls="navbar-hamburger"
               aria-expanded={isMenuOpen}
             >
