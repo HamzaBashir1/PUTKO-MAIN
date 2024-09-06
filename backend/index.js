@@ -15,11 +15,13 @@ const Port = process.env.Port || 8000;
 
 
 const corsOptions = {
-  origin: true,
-};
+  origin: ["https://putko-main.vercel.app/"],
+  methods: ["POST","GET"],
+  Credential: true
+}
 
 app.get("/", (req, res) => {
-  res.send("API is working");
+  res.json("API is working");
 });
 
 // Database connection
