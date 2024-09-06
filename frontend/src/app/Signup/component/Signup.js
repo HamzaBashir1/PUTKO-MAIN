@@ -153,7 +153,7 @@ const Signup = () => {
                   <figure
                     className="w-[60px] h-[60px] rounded-full border-2 border-solid border-primaryColor flex items-center justify-center"
                   >
-                    <Image src={previewURL} alt="Profile" className="w-full rounded-full" />
+                    <img src={previewURL} alt="Profile" className="w-full rounded-full" />
                   </figure>
                 )}
 

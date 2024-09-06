@@ -24,6 +24,7 @@ export const registerAdmin = async (req, res) => {
       phone,
       photo,
       gender,
+      isAdmin: true
     });
 
     // Save admin to database

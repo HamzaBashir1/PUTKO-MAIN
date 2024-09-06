@@ -20,7 +20,6 @@ const Signup = () => {
     password: "",
     photo: selectedFile,
     gender: "",
-    role: "admin",
   });
 
   const router = useRouter(); // Use next/navigation for app directory
@@ -44,7 +43,7 @@ const Signup = () => {
     setLoading(true);
 
     try {
-      const res = await fetch(`${Base_URL}/auth/register`, {
+      const res = await fetch(`${Base_URL}/admin/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -60,7 +59,7 @@ const Signup = () => {
 
       setLoading(false);
       toast.success(message);
-      router.push("/login"); // Using router.push for navigation
+      router.push("/Admin-Login"); // Using router.push for navigation
     } catch (err) {
       toast.error(err.message);
       setLoading(false);
@@ -152,7 +151,7 @@ const Signup = () => {
                   <figure
                     className="w-[60px] h-[60px] rounded-full border-2 border-solid border-primaryColor flex items-center justify-center"
                   >
-                    <Image src={previewURL} alt="Profile" className="w-full rounded-full" />
+                    <img src={previewURL} alt="Profile" className="w-full rounded-full" />
                   </figure>
                 )}
 
@@ -184,7 +183,7 @@ const Signup = () => {
               </div>
               <p className="mt-5 text-textColor text-center">
                 Already have an account?
-                <Link href="/login" className="text-primaryColor font-medium ml-1">
+                <Link href="/Admin-Login" className="text-primaryColor font-medium ml-1">
                   Login
                 </Link>
               </p>
