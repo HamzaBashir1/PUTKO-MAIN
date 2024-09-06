@@ -20,7 +20,7 @@ const Signup = () => {
     password: "",
     photo: selectedFile,
     gender: "",
-    role: "guest",
+    role: "admin",
   });
 
   const router = useRouter(); // Use next/navigation for app directory
@@ -80,7 +80,7 @@ const Signup = () => {
           {/* Signup form */}
           <div className="rounded-l-lg lg:pl-16 py-10">
             <h3 className="text-headingColor text-[22px] leading-9 font-bold mb-10">
-              Create an <span className="text-primaryColor">account</span>
+              Create an Admin <span className="text-[#4FBE9F]">Account</span>
             </h3>
 
             <form onSubmit={submitHandler}>
@@ -129,8 +129,7 @@ const Signup = () => {
                     onChange={handleInputChange}
                     className="text-textColor font-semibold text-[15px] leading-7 px-4 py-3 focus:outline-none"
                   >
-                    <option value="patient">GUESTS</option>
-                    <option value="doctor">Host</option>
+                    <option value="admin">admin</option>
                   </select>
                 </label>
                 <label className="text-headingColor font-bold text-[16px] leading-7">

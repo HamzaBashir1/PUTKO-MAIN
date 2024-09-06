@@ -3,7 +3,9 @@ import "./globals.css";
 import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer";
 import { AuthContextProvider } from './context/AuthContext.js'
-import { ToastContainer } from "react-toastify";
+import { ToastContainer } from "./Nexttoast";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,9 +20,16 @@ export default function RootLayout({ children }) {
       
       <body className={inter.className}>
         <AuthContextProvider>
-        {/* <ToastContainer theme="dark" position="top-right" autoClose={3000} closeOnClick pauseOnHover={false} /> */}
+        
           {/* <Header/> */}
             {children}
+            <ToastContainer
+              theme="dark"
+              position="top-right"
+              autoClose={10000}
+              closeOnClick
+              pauseOnHover={false}
+            />
           <Footer/>
           </AuthContextProvider>
       </body>

@@ -11,9 +11,11 @@ import Location from "./components/location/Location";
 import Section from "./components/Section";
 import FeatureSection from './components/FeatureSection'
 
+
 export default function Home() {
   return (
     <main>
+      
       <Hero/>
       <Categories/>
       <CardSection/>

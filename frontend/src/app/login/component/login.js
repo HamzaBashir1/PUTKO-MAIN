@@ -1,10 +1,11 @@
-"use client"
+"use client";
 import { useState, useContext } from "react";
 import Link from "next/link";
 import { Base_URL } from "../../config.js";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../context/AuthContext.js";
 import HashLoader from "react-spinners/HashLoader";
+import { useRouter } from "next/navigation"; 
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +15,7 @@ const Login = () => {
 
   const [loading, setLoading] = useState(false);
   const { dispatch } = useContext(AuthContext);
+  const router = useRouter(); // Initialize useRouter
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -49,8 +51,8 @@ const Login = () => {
       setLoading(false);
       toast.success(result.message);
 
-      // Redirect to homepage without using useRouter
-      window.location.href = "/";
+      // Redirect to homepage using useRouter
+      router.push("/");
     } catch (err) {
       console.log(err.message);
       toast.error("Login failed. Please try again.");
